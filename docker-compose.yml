@@ -1,0 +1,19 @@
+services:
+  server:
+    build: .
+    image: secure-file-transfer:latest
+    container_name: sft-server
+    ports:
+      - "${SFT_PORT:-5001}:5001"
+    volumes:
+      - ./data:/data
+    environment:
+      SFT_PASSWORD: ${SFT_PASSWORD:?请先设置 SFT_PASSWORD 环境变量}
+      SFT_PORT: 5001
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "python", "-c", "import socket,sys; s=socket.socket(); sys.exit(0 if s.connect_ex(('127.0.0.1', 5001))==0 else 1)"]
+      interval: 30s
+      timeout: 3s
+      start_period: 5s
+      retries: 3

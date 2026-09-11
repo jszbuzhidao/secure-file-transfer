@@ -1,0 +1,22 @@
+# ---- Python 常规 ----
+__pycache__/
+*.py[cod]
+*.egg-info/
+.eggs/
+.venv/
+venv/
+.idea/
+.vscode/
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# ---- 本项目运行时产物 ----
+received/
+share/
+downloaded/
+data/
+*.part
+*.part.meta.json

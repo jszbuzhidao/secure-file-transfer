@@ -1,0 +1,20 @@
+# 原始课设备份（不动）
+_original_backup/
+
+# Python 运行时产物
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+.venv/
+
+# 传输临时文件与运行产物
+*.part
+*.part.meta.json
+received/
+share/
+downloaded/
+data/
+
+# 版本控制
+.git/
